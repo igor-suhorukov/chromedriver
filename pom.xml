@@ -32,6 +32,9 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+    <properties>
+        <chromedriver.version>2.20</chromedriver.version>
+    </properties>
     <build>
         <plugins>
             <plugin>
@@ -46,7 +49,7 @@
                             <goal>wget</goal>
                         </goals>
                         <configuration>
-                            <url>https://chromedriver.storage.googleapis.com/2.20/chromedriver_win32.zip</url>
+                            <url>https://chromedriver.storage.googleapis.com/${chromedriver.version}/chromedriver_win32.zip</url>
                             <unpack>true</unpack>
                             <outputDirectory>${project.build.directory}/win</outputDirectory>
                         </configuration>
@@ -58,7 +61,7 @@
                             <goal>wget</goal>
                         </goals>
                         <configuration>
-                            <url>https://chromedriver.storage.googleapis.com/2.20/chromedriver_linux32.zip</url>
+                            <url>https://chromedriver.storage.googleapis.com/${chromedriver.version}/chromedriver_linux32.zip</url>
                             <unpack>true</unpack>
                             <outputDirectory>${project.build.directory}/linux32</outputDirectory>
                         </configuration>
@@ -70,7 +73,7 @@
                             <goal>wget</goal>
                         </goals>
                         <configuration>
-                            <url>https://chromedriver.storage.googleapis.com/2.20/chromedriver_linux64.zip</url>
+                            <url>https://chromedriver.storage.googleapis.com/${chromedriver.version}/chromedriver_linux64.zip</url>
                             <unpack>true</unpack>
                             <outputDirectory>${project.build.directory}/linux64</outputDirectory>
                         </configuration>
