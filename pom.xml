@@ -8,7 +8,7 @@
     </parent>
     <groupId>com.github.igor-suhorukov</groupId>
     <artifactId>chromedriver</artifactId>
-    <version>2.23.2-SNAPSHOT</version>
+    <version>2.24-SNAPSHOT</version>
     <description>Package chromedriver as maven artifact</description>
     <scm>
         <url>https://github.com/igor-suhorukov/chromedriver.git</url>
@@ -31,9 +31,10 @@
         </license>
     </licenses>
     <properties>
-        <chromedriver.version>2.23</chromedriver.version>
-        <chromedriver.win32.md5>6856adb07cc8683d2a1587c05f37f1be</chromedriver.win32.md5>
-        <chromedriver.linux64.md5>cc89692d75fb0bdfe700ec0ca19808a5</chromedriver.linux64.md5>
+        <chromedriver.version>2.24</chromedriver.version>
+        <chromedriver.win32.md5>1a46c83926f891d502427df10b4646b9</chromedriver.win32.md5>
+	<chromedriver.mac64.md5>d117b66fac514344eaf80691ae9a4687</chromedriver.mac64.md5>
+        <chromedriver.linux64.md5>c56e41bdc769ad2c31225b8495fc1a93</chromedriver.linux64.md5>
     </properties>
     <build>
         <plugins>
@@ -68,6 +69,19 @@
                             <md5>${chromedriver.linux64.md5}</md5>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>download-mac64</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>https://chromedriver.storage.googleapis.com/${chromedriver.version}/chromedriver_mac64.zip</url>
+                            <unpack>true</unpack>
+                            <outputDirectory>${project.build.directory}/mac64</outputDirectory>
+                            <md5>${chromedriver.mac64.md5}</md5>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -92,6 +106,11 @@
                                     <file>${project.build.directory}/linux64/chromedriver</file>
                                     <type>bin</type>
                                     <classifier>linux64</classifier>
+                                </artifact>
+                                <artifact>
+                                    <file>${project.build.directory}/mac64/chromedriver</file>
+                                    <type>bin</type>
+                                    <classifier>mac64</classifier>
                                 </artifact>
                             </artifacts>
                         </configuration>
