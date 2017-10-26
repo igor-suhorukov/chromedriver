@@ -8,7 +8,7 @@
     </parent>
     <groupId>com.github.igor-suhorukov</groupId>
     <artifactId>chromedriver</artifactId>
-    <version>2.32-SNAPSHOT</version>
+    <version>${chromedriver.version}-SNAPSHOT</version>
     <description>Package chromedriver as maven artifact</description>
     <scm>
         <url>https://github.com/igor-suhorukov/chromedriver.git</url>
@@ -31,10 +31,10 @@
         </license>
     </licenses>
     <properties>
-        <chromedriver.version>2.31</chromedriver.version>
-        <chromedriver.win32.md5>6a6e8cd245742f20d61b7dac743844fb</chromedriver.win32.md5>
-	<chromedriver.mac64.md5>b77c9c71b52302fcfe6b40dcd143f1d0</chromedriver.mac64.md5>
-        <chromedriver.linux64.md5>e95c696646102e38d8543b89b7eaa4a5</chromedriver.linux64.md5>
+        <chromedriver.version>2.33</chromedriver.version>
+        <chromedriver.win32.md5>718df64a6e2b2efde50b26ac22fde229</chromedriver.win32.md5>
+	    <chromedriver.mac64.md5>3d520b8ede8e9deb8c9a2efe2aec5f35</chromedriver.mac64.md5>
+        <chromedriver.linux64.md5>6dc329fb8ecdff6a9f74eea053434662</chromedriver.linux64.md5>
     </properties>
     <build>
         <plugins>
